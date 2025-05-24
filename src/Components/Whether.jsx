@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Whether = () => {
   const inputRef = useRef();
   const [data, setdata] = useState(false);
 
+  
+
   const search = async (city) => {
     if (city === "") {
-      alert("Enter city name!");
+      toast("Enter city name!");
       return;
     }
     try {
@@ -17,7 +21,7 @@ const Whether = () => {
       const response = await fetch(url);
       const data = await response.json();
       if (!response.ok) {
-        alert(data.message);
+        toast(data.message.toUpperCase());
       }
       console.log(data);
       const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
@@ -39,9 +43,7 @@ const Whether = () => {
   }, []);
 
   return (
-    <div className=
-    "place-self-center p-10 rounded-[20px] bg-white/10 backdrop-blur-md flex flex-col shadow-lg border border-white/30"
-    >
+    <div className="place-self-center p-10 rounded-[20px] bg-white/10 backdrop-blur-md flex flex-col shadow-lg border border-white/30">
       <div className="place-self-center mb-4 text-2xl font-bold text-white">
         Live Weather
       </div>
@@ -97,7 +99,21 @@ const Whether = () => {
           </div>
         </>
       )}
+      
+      <ToastContainer
+    position="bottom-center"
+    autoClose={3000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+  />;
     </div>
+    
   );
 };
 
