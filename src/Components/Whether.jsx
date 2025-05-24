@@ -3,7 +3,10 @@ import React from 'react'
 const Whether = () => {
   return (
     <div className=''>
-      <h1>Whether</h1>
+      <div>
+        <input type="text" placeholder='search' />
+        <img src="" alt="" />
+      </div>
     </div>
   )
 }
