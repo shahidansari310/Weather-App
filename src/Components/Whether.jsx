@@ -75,14 +75,14 @@ const Whether = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-between mt-6 gap-4 text-white text-center sm:text-left">
-            <div className="flex gap-3 items-center justify-center sm:justify-start">
+            <div className="flex gap-3 items-center justify-center sm:justify-center">
               <img src="humidity.png" alt="humidity" className="w-8 h-8" />
               <div>
                 <p className="text-sm">{data.humidity}%</p>
                 <p className="text-xs">Humidity</p>
               </div>
             </div>
-            <div className="flex gap-3 items-center justify-center sm:justify-start">
+            <div className="flex gap-3 items-center justify-center sm:justify-center">
               <img src="wind.png" alt="wind" className="w-8 h-8" />
               <div>
                 <p className="text-sm">{data.wind}km/h</p>
