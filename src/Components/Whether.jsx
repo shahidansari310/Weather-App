@@ -2,10 +2,11 @@ import React from 'react'
 
 const Whether = () => {
   return (
-    <div className='place-self-center p-10 rounded-[10px] bg-gradient-to-r from-indigo-600 to-purple-500 flex flex-col'>
+    <div className='place-self-center p-10 rounded-[20px] bg-gradient-to-r from-indigo-600 to-purple-500 flex flex-col shadow-amber-600'>
+        <div className='place-self-center mb-4 text-2xl font-bold text-white'>Live Weather</div>
       <div className='flex gap-2'>
         <input type="text" placeholder='search'
-        className='border rounded-3xl p-2 bg-white text-xl' />
+        className='border rounded-3xl p-2 bg-white text-xl pl-4 pr-4' />
         <img src="search.png" alt="" className='w-10 h-11 p-1 ' />
       </div>
       <img src="clear.png" alt="" className='w-[150px] place-self-center' />
