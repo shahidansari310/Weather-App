@@ -4,23 +4,6 @@ const Whether = () => {
   const inputRef = useRef();
   const [data, setdata] = useState(false);
 
-  //   const allicon = {
-  //     "01d": "clear.png",
-  //     "01n": "clear.png",
-  //     "02d": "cloud.png",
-  //     "02n": "cloud.png",
-  //     "03d": "cloud.png",
-  //     "03n": "cloud.png",
-  //     "04d": "drizzle.png",
-  //     "04n": "drizzle.png",
-  //     "09d": "rain.png",
-  //     "09n": "rain.png",
-  //     "10d": "rain.png",
-  //     "10n": "rain.png",
-  //     "13d": "snow.png",
-  //     "13n": "snow.png",
-  //   };
-
   const search = async (city) => {
     if (city === "") {
       alert("Enter city name!");
@@ -37,7 +20,6 @@ const Whether = () => {
         alert(data.message);
       }
       console.log(data);
-      //   const icon = allicon[data.weather[0].icon] || "clear.png";
       const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       setdata({
         humidity: data.main.humidity,
@@ -59,7 +41,6 @@ const Whether = () => {
   return (
     <div className=
     "place-self-center p-10 rounded-[20px] bg-white/10 backdrop-blur-md flex flex-col shadow-lg border border-white/30"
-    // "place-self-center p-10 rounded-[20px] bg-gradient-to-r from-indigo-600 to-purple-500 flex flex-col shadow-amber-600 border-4"
     >
       <div className="place-self-center mb-4 text-2xl font-bold text-white">
         Live Weather
