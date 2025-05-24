@@ -11,5 +11,6 @@
 .app{
     min-height: 100vh;
     display: grid;
-    background-color: rgb(163, 163, 255);
+    /* background-color: rgb(163, 163, 255); */
+    background: url("9011110.jpg");
 }
