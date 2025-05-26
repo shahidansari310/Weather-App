@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ToastContainer,toast } from "react-toastify";
 
 const Whether = () => {
   const inputRef = useRef();
@@ -8,7 +9,7 @@ const Whether = () => {
 
   const search = async (city) => {
     if (city === "") {
-      alert("Enter city name!");
+      toast("Enter city name!");
       return;
     }
     try {
@@ -16,7 +17,7 @@ const Whether = () => {
       const response = await fetch(url);
       const data = await response.json();
       if (!response.ok) {
-        alert(data.message);
+        toast(data.message);
       }
       const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       setdata({
@@ -98,6 +99,18 @@ const Whether = () => {
           </div>
         </>
       )}
+       <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
     
   );
