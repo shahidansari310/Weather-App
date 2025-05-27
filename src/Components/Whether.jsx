@@ -37,7 +37,7 @@ const Whether = () => {
       });
     } catch (error) {
       setdata(false);
-      // toast("FAILED TO FETCH WEATHER DATA");
+  
     }
   };
 
