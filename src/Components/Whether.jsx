@@ -1,11 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ToastContainer,toast } from "react-toastify";
+import addNotification from "react-push-notification";
 
 const Whether = () => {
   const inputRef = useRef();
   const [data, setdata] = useState(false);
 
-  
+  useEffect(()=>{
+    addNotification({
+      title:"Weather App",
+      message:'Using Weather App by Shahid Ansari',
+      duration:4000,
+      native:true,
+    })
+  },[])
 
   const search = async (city) => {
     if (city === "") {
